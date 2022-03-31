@@ -1,0 +1,11 @@
+#!/bin/sh
+if [[ ! -z $1 ]];
+then
+  wal -q -i $1
+  feh --bg-fill $1
+  .config/polybar/cuts/scripts/pywal.sh $1
+  reloadgtk
+else
+  echo "USAGE: setbg <imagepath>"
+  exit 1;
+fi

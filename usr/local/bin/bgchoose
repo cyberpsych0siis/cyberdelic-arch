@@ -1,0 +1,15 @@
+#!/bin/sh
+#exec urxvt -name cmatrix-bg -geometry 1366x786 -bg rgba:0015/0015/0015/cccc -e cmatrix
+
+#export WALLPAPER=/usr/share/wallpapers/$(ls /usr/share/wallpapers | shuf -n 1)
+export WALLPAPER=$(xplr /usr/share/wallpapers)
+#echo $WALLPAPER
+
+if [[ ! -z "$WALLPAPER" ]];
+then 
+#  wal -q -i $WALLPAPER
+#  feh --bg-fill $WALLPAPER
+#  .config/polybar/cuts/scripts/pywal.sh $WALLPAPER
+  echo $WALLPAPER > $HOME/.currentbg
+  setbg $WALLPAPER
+fi

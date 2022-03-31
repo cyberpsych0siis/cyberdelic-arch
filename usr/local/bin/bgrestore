@@ -1,0 +1,10 @@
+#!/bin/sh
+export WP=$(<$HOME/.currentbg)
+echo Setting as Wallpaper: ${WP}
+
+if [[ ! -z "$WP" ]];
+then
+  setbg $WP;
+else
+  setbg /usr/share/wallpapers/default.jpg
+fi
